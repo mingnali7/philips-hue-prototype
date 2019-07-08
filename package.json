@@ -1,0 +1,19 @@
+{
+  "name": "hue-v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mingna Li",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jquery": "^3.4.1",
+    "mustache-express": "^1.2.8",
+    "node-hue-api": "^2.4.6",
+    "pg": "^7.11.0"
+  }
+}

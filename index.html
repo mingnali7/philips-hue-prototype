@@ -1,0 +1,176 @@
+<!-- <input method="POST" id="clickMe" type="button" value="clickme" action="/post" /> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>hue test</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="myStyle.css" />
+
+  <script type="text/javascript">
+    $(document).ready(() => {
+      console.log("meow")
+      $('#newCue').click(() => {
+        // var btn = document.createElement("BUTTON");
+        // btn.innerHTML = "newCue";
+        // document.body.appendChild(btn);
+        // console.log("clicked")
+        // $.ajax({
+        //   type: 'POST',
+        //   url: '/getCues',
+
+        // })
+        $.post("/record", function () {
+          console.log("new cue added")
+        })
+      })
+    })
+  </script>
+
+
+</head>
+
+<body>
+  <br>
+  <br>
+
+  <!-- light4 -->
+  <div class="controlPanel">
+    <div class="row1">
+      <div class="lightNum">
+        <h4>LIGHT4</h4>
+      </div>
+      <div class="onoff">
+        <form action="/off" method="post">
+          <input type="submit" value="off">
+        </form>
+      </div>
+    </div>
+    <div class="colorChoice">
+
+      <form action="/red" method="get">
+        <input type="submit" value="R" id="redbutton">
+      </form>
+      <form action="/green" method="post">
+        <input type="submit" value="G" class="greenbutton">
+      </form>
+      <form action="/blue" method="post">
+        <input type="submit" value="B" class="bluebutton">
+      </form>
+      <form action="/white" method="post">
+        <input type="submit" value="W" class="whitebutton">
+      </form>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <!-- light2 -->
+  <div class="controlPanel">
+    <div class="row1">
+      <div class="lightNum">
+        <h4>LIGHT2</h4>
+      </div>
+      <div class="onoff">
+        <form action="/off2" method="post">
+          <input type="submit" value="off">
+        </form>
+      </div>
+    </div>
+    <div class="colorChoice">
+
+      <form action="/red2" method="post">
+        <input type="submit" value="R" id="redbutton">
+      </form>
+      <form action="/green2" method="post">
+        <input type="submit" value="G" class="greenbutton">
+      </form>
+      <form action="/blue2" method="post">
+        <input type="submit" value="B" class="bluebutton">
+      </form>
+      <form action="/white2" method="post">
+        <input type="submit" value="W" class="whitebutton">
+      </form>
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <!-- light1 -->
+  <div class="controlPanel">
+    <div class="row1">
+      <div class="lightNum">
+        <h4>LIGHT1</h4>
+      </div>
+      <div class="onoff">
+        <form action="/off1" method="post">
+          <input type="submit" value="off">
+        </form>
+      </div>
+    </div>
+    <div class="colorChoice">
+
+      <form action="/red1" method="post">
+        <input type="submit" value="R" id="redbutton">
+      </form>
+      <form action="/green1" method="post">
+        <input type="submit" value="G" class="greenbutton">
+      </form>
+      <form action="/blue1" method="post">
+        <input type="submit" value="B" class="bluebutton">
+      </form>
+      <form action="/white1" method="post">
+        <input type="submit" value="W" class="whitebutton">
+      </form>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <!-- <form action="/record" method="post">
+    <input type="submit" value="record">
+  </form> -->
+  <!-- <form action="/activate" method="post">
+    <input type="submit" value="activate">
+  </form> -->
+
+
+
+  <form action="/getCues" method="post">
+    <h3>Go to Cue No.:</h3>
+    <input type="text" name="retrieve">
+    <input type="submit" value="go">
+  </form>
+
+  <form action="/record" method="post">
+    <h3>Enter Cue Label Here:</h3>
+    <input type="text" name="label">
+    <input type="submit" value="record">
+  </form>
+
+  <!-- <form action="/sequence" method="post">
+    <input type="submit" value="sequence">
+  </form> -->
+
+  <h3>Cue List</h3>
+  {{#cueSheet}}
+  <p>{{id}} {{label}}</p>
+  {{/cueSheet}}
+
+  <!-- <script>
+    function newCue() {
+      var btn = document.createElement("BUTTON");
+      btn.innerHTML = "newCue";
+      document.body.appendChild(btn);
+      console.log
+    }
+  </script> -->
+
+</body>
+
+</html>
