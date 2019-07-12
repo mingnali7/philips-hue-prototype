@@ -8,28 +8,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>hue test</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
+  <script type="text/javascript" src="jquery.js"></script>
   <link rel="stylesheet" type="text/css" href="myStyle.css" />
 
-  <script type="text/javascript">
-    $(document).ready(() => {
-      console.log("meow")
-      $('#newCue').click(() => {
-        // var btn = document.createElement("BUTTON");
-        // btn.innerHTML = "newCue";
-        // document.body.appendChild(btn);
-        // console.log("clicked")
-        // $.ajax({
-        //   type: 'POST',
-        //   url: '/getCues',
 
-        // })
-        $.post("/record", function () {
-          console.log("new cue added")
-        })
-      })
-    })
-  </script>
 
 
 </head>
@@ -132,16 +114,16 @@
 
   <br>
   <br>
-  <!-- <form action="/record" method="post">
-    <input type="submit" value="record">
-  </form> -->
-  <!-- <form action="/activate" method="post">
-    <input type="submit" value="activate">
-  </form> -->
+
+  <!-- scene buttons -->
+  <button type="button" id="redBlue">R+B</button>
+  <button type="button" id="redGreen">R+G</button>
+  <button type="button" id="greenBlue">G+B</button>
+  <button type="button" id="redGreenBlue">R+G+B</button>
 
 
 
-  <form action="/getCues" method="post">
+  <!-- <form action="/getCues" method="post">
     <h3>Go to Cue No.:</h3>
     <input type="text" name="retrieve">
     <input type="submit" value="go">
@@ -151,16 +133,16 @@
     <h3>Enter Cue Label Here:</h3>
     <input type="text" name="label">
     <input type="submit" value="record">
-  </form>
+  </form> -->
 
   <!-- <form action="/sequence" method="post">
     <input type="submit" value="sequence">
   </form> -->
 
-  <h3>Cue List</h3>
+  <!-- <h3>Cue List</h3>
   {{#cueSheet}}
   <p>{{id}} {{label}}</p>
-  {{/cueSheet}}
+  {{/cueSheet}} -->
 
   <!-- <script>
     function newCue() {

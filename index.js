@@ -169,12 +169,16 @@ function meow() {
 
 // activate a scene
 app.post('/activate', function (req, res) {
-  api.activateScene(newCue[0].id)
-    .then(displayResults)
-    .done();
+  // get scene id from button jquery and ajax
+  let sceneId = req.body.id
+  console.log(sceneId)
+  // activate the scene
+  api.activateScene(sceneId, function (err, result) {
+    if (err) throw err;
+  });
 
   res.redirect('/')
-  console.log('activated')
+  console.log('scene activated')
 })
 
 // record a scene
